@@ -12,8 +12,8 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "turma")
-public class turma {
+@Table(name = "turmas")
+public class Turma {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,12 +25,12 @@ public class turma {
 
     @OneToMany 
     @JoinColumn(name = "id_turma") 
-    private List<aluno> alunos;
+    private List<Aluno> alunos;
 
-    public turma() {
+    public Turma() {
     }
 
-    public turma(Integer id, String turma, List<aluno> alunos) {
+    public Turma(Integer id, String turma, List<Aluno> alunos) {
         this.id = id;
         this.turma = turma;
         this.alunos = alunos;
@@ -52,12 +52,13 @@ public class turma {
         this.turma = turma;
     }
 
-    public List<aluno> getUsuarios() {
+    public List<Aluno> getAlunos() {
         return alunos;
     }
 
-    public void setUsuarios(List<aluno> usuarios, List<aluno> alunos) {
+    public void setAlunos(List<Aluno> alunos) {
         this.alunos = alunos;
     }
 
+    
 }

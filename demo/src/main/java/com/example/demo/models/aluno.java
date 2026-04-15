@@ -10,10 +10,10 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "aluno")
-public class aluno {
+public class Aluno {
 
     @Id
-    @GeneratedValue(strategy = GeneratedType.Entity)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
@@ -26,10 +26,10 @@ public class aluno {
     @Column(name = "email")
     private String email;
 
-    public aluno() {
+    public Aluno() {
     }
 
-    public aluno(int id, String nome, int data_nascimento, String email) {
+    public Aluno(int id, String nome, int data_nascimento, String email) {
         this.id = id;
         this.nome = nome;
         this.data_nascimento = data_nascimento;

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.models.aluno;
+import com.example.demo.models.Aluno;
 import com.example.demo.repositories.AlunoRepository;
 
 @Service
@@ -17,11 +17,11 @@ public class AlunoService {
         return alunoRepository.count();
     }
 
-    public aluno buscarAluno(Integer id) {
+    public Aluno buscarAluno(Integer id) {
         return alunoRepository.findById(id).get();
     }
 
-    public List<aluno> listarPautas() {
+    public List<Aluno> listarPautas() {
         return alunoRepository.findAll();
     }
 
@@ -33,12 +33,12 @@ public class AlunoService {
         return false;
     }
 
-    public aluno cadastrarAluno(aluno aluno) {
+    public Aluno cadastrarAluno(Aluno aluno) {
         return alunoRepository.save(aluno);
     }
 
-    public aluno atualizarAluno(Integer id, aluno aluno) {
-        aluno alunoRecuperado = buscarAluno(id);
+    public Aluno atualizarAluno(Integer id, Aluno aluno) {
+        Aluno alunoRecuperado = buscarAluno(id);
         if (alunoRepository != null) {
             alunoRecuperado.setId(id);
             if (aluno.getNome() != null) {
