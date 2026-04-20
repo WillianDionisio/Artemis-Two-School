@@ -13,7 +13,7 @@ public class AlunoService {
     @Autowired
     private AlunoRepository alunoRepository;
 
-    public long contarPautas() {
+    public long contarAlunos() {
         return alunoRepository.count();
     }
 
@@ -21,11 +21,11 @@ public class AlunoService {
         return alunoRepository.findById(id).get();
     }
 
-    public List<Aluno> listarPautas() {
+    public List<Aluno> listarAlunos() {
         return alunoRepository.findAll();
     }
 
-    public Boolean deletarPauta(Integer id) {
+    public Boolean deletarAlunos(Integer id) {
         if (alunoRepository.existsById(id)) {
             alunoRepository.deleteById(id);
             return true;
